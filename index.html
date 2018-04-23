@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>BDO Timer</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  </head>
+  <body>
+
+    <div id="clock-unit">
+      <div class="time-of-day">
+          <p class="currentTime">
+              <span class="ampm" id="ampm"></span>
+              <span class="h" id="displayHour"></span><span class="colon">:</span><span class="m" id="displayMinute"></span>
+          </p>
+          <p class="untilNight" id="untilNight">
+              <span>Night in</span> <b></b>
+          </p>
+          <p class="untilDaytime" id="untilDaytime">
+              <span>Daytime in</span> <b></b>
+          </p>
+      </div>
+      <div class="resets">
+          <p class="untilDailyReset">
+              <span>Daily reset in</span> <b id="untilDailyReset"></b>
+          </p>
+          <p class="untilImperialReset">
+              <span title="Imperial Trade, Imperial Cooking &amp; Imperial Alchemy Delivery (50% chance to reset per channel, every 3 hours)">Imperial reset in</span> <b id="untilImperialReset"></b>
+          </p>
+          <p class="untilImperialReset">
+              <span title="Imperial Trade Delivery (required items change every 4 hours)">Imp. Trading reset in</span> <b id="untilTradeReset"></b>
+          </p>
+
+          <p class="untilImperialReset">
+              <span title="Black Spirit Adventures">Boardgame reset in</span> <b id="untilJumanjiReset"></b>
+          </p>
+      </div>
+    </div>
+          
+    <script>
+      require('./renderer.js')
+    </script>
+  </body>
+</html>

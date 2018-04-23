@@ -1,0 +1,54 @@
+{
+  "name": "bdo-timer",
+  "version": "1.0.0",
+  "description": "BDO Timer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack:osx": "electron-packager . --asar --out=dist/osx --platform=darwin --overwrite --arch=x64 --icon=assets/icons/favicon.ico && npm run codesign",
+    "pack:win32": "electron-packager . --asar --icon=assets/icons/favicon.ico --overwrite --platform=win32 --arch=ia32 --out=release-builds",
+    "pack:win64": "electron-packager . --icon=assets/icons/favicon.ico --overwrite --platform=win32 --arch=x64 --out=release-builds --version=0.0.1 bdo-timer"
+  },
+  "repository": "https://github.com/lexor/bdo-timer",
+  "keywords": [
+    "BDO Timer",
+    "black desert online"
+  ],
+  "author": "lexor",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^1.8.4",
+    "electron-builder": "^20.10.0"
+  },
+  "dependencies": {
+    "node-clock": "^0.1.1"
+  },
+  "build": {
+    "appId": "bdotimer",
+    "category": "bdotimer.app-category.adventure-games",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "assets/icons/favicon.ico"
+    }
+  }
+}
