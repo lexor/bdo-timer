@@ -81,13 +81,6 @@ function displayMinute() {
 	return this.inGameMinute < 10 ? '0' + +this.inGameMinute : this.inGameMinute;
 }
 
-function showJumanji() {
-	if (!this.$root.state.mapdata.settings) {
-		return false;
-	}
-	return !!this.$root.state.mapdata.settings.showboardgameonclock;
-}
-
 function clocktime(secs) {
 	if (secs < 60) {
 		return '<1 min';
@@ -123,8 +116,6 @@ function updateHtmls() {
 	 document.getElementById('untilDailyReset').innerHTML = clocktime(secsUntilDailyReset);
 	 document.getElementById('untilImperialReset').innerHTML = clocktime(secsUntilImperialReset);
 	 document.getElementById('untilTradeReset').innerHTML = clocktime(secsUntilTradeReset);
-	 document.getElementById('untilJumanjiReset').innerHTML = clocktime(secsUntilJumanjiReset);
-	
 }
 
 var baseTick = 4444.444444;
